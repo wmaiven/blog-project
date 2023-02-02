@@ -1,0 +1,41 @@
+body{
+    background-color:rgb(25, 1, 6)
+
+}
+
+hr {
+    border-color:orangered
+}
+
+.new {
+    border-color: rgb(245, 158, 146)
+}
+.card {
+    color: orangered;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(39, 3, 26);
+    border-block-color: rgb(255, 0, 78);
+    border-block-width: revert;
+    border-inline-color: orangered;
+}
+.table {
+    color: rgb(255, 0, 78);
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(39, 3, 26);
+    border-block-color: rgb(255, 0, 78);
+    border-block-width: revert;
+    border-inline-color: orangered;
+    border-start-end-radius:revert
+}
+tr {
+    height: 50px;
+    border: 3px;
+    border: 3px solid orangered;
+}
+
+td {
+    width: 80px;
+    border: 3px solid orangered;
+}

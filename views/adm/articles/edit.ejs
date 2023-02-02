@@ -1,0 +1,69 @@
+<%- include ('../../partials/header.ejs'); %>
+<%- include ('../../partials/navbar.ejs'); %>
+<body>
+    <div class="container">
+        <hr />
+        <div class="card">
+            <div class="card-header">
+                <h3 style="color:orangered"><b>New Article</b></h3>
+            </div>
+            <div class="card-body">
+                <label>Title</label>
+                <form method="post" action="/article/update" style="display:inline">
+
+                    <input class="form-control" type="text" name="title" value="<%=articles.title%>" placeholder="define a title for the article" />
+                    <hr class="new" />
+                    <label>Description</label>
+                    <textarea class="form-control" placeholder="Describe her your article" name="body" id="article"></textarea>
+                    <input type="hidden" name="id" value="<%= articles.id %>" />
+                    <hr class="new" />
+                    <label>Select Category</label>
+
+                    <select class="form-control" name="select">
+                        <%category.forEach((category)=> {%>
+                        <% if (category.id == articles.categoryId){%>
+                        <option value="<%=category.id%>" name="categoryId" selected><%=category.title%></option>
+                        <%}else{%>
+                        <option value="<%=category.id%>" name="categoryId"><%=category.title%></option>
+                        <%}%>
+                        <%})%>
+                    </select>
+                    <br />
+                    <button class="btn btn-danger" style="width: 100px; height: 40px">To edit</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+<div id="content" style="display:none">
+    <%- articles.body %>
+</div>
+    <%- include ('../../partials/footer.ejs'); %>
+<script src="/tinymce/tinymce.min.js"></script>
+<script></script>
+<script>
+    tinymce.init({
+        selector: "#article",
+        plugins: [
+            'advlist',
+            'autolink',
+            'link',
+            'image',
+            'lists',
+            'preview',
+            'searchreplace',
+            'wordcount',
+            'fullscreen',
+            'insertdatetime',
+            'media',
+            'save',
+            'table',
+            'emoticons',
+        ],
+        init_instance_callback: () => {
+            tinymce.get("article").setContent($("#content").html());
+        }
+        })
+</script>

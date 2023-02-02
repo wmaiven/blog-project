@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg " style="background-color: orangered;">
+    <a class="navbar-brand" href="/" style=" color: rgb(13, 0, 56); font-weight: bold">
+        home
+    </a>
+
+    <ul class="navbar-nav mr-auto">
+        <%category.forEach(category =>{ %>
+        <li class="nav-item">
+            <a class="nav-link" href="/category/<%=category.slug%>" style=" color: rgb(13, 0, 56);"><%=category.title%></a>
+        </li>
+        <%})%>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/login" style=" color: rgb(13, 0, 56); float:right">Login</a>
+        </li>
+    </ul>
+
+
+</nav>
+<br />

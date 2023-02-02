@@ -1,0 +1,55 @@
+<%- include ('../../partials/header.ejs'); %>
+<%- include ('../../partials/navbar.ejs'); %>
+<body>
+    <div class="container">
+        <hr />
+        <div class="card">
+            <div class="card-header">
+                <h3 style="color:orangered"><b>New Article</b></h3>
+            </div>
+            <div class="card-body">
+                <label>Title</label>
+                <form method="post" action="/article/save">
+                    <input class="form-control" type="text" name="title" placeholder="define a title for the article" />
+                    <hr class="new" />
+                    <label>Description</label>
+                    <textarea class="form-control" placeholder="Describe her your article" name="body" id="article"></textarea>
+                    <hr class="new" />
+                    <label>Select Category</label>
+                    <select class="form-control" name="select" >
+                        <%category.forEach((category)=> {%>
+                        <option value="<%=category.id%>"><%=category.title%></option>
+                        <%})%>
+                    </select>
+                    <br />
+                    <button class="btn btn-danger"  style="width: 100px; height: 40px">Send</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+    <%- include ('../../partials/footer.ejs'); %>
+<script src="/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: "#article",
+        plugins: [
+            'advlist',
+            'autolink',
+            'link',
+            'image',
+            'lists',
+            'preview',
+            'searchreplace',
+            'wordcount',
+            'fullscreen',
+            'insertdatetime',
+            'media',
+            'save',
+            'table',
+            'emoticons',
+        ]
+        })
+</script>

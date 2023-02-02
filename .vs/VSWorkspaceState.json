@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\articles",
+    "\\categories",
+    "\\views",
+    "\\views\\adm",
+    "\\views\\adm\\articles",
+    "\\views\\adm\\users",
+    "\\views\\partials"
+  ],
+  "SelectedNode": "\\views\\partials\\navbarhome.ejs",
+  "PreviewInSolutionExplorer": false
+}

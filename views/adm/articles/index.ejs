@@ -1,0 +1,48 @@
+<%- include ('../../partials/header.ejs'); %>
+<%- include ('../../partials/navbar.ejs'); %>
+
+<body>
+    <div class="container">
+        <hr />
+        <h2 style="color:orangered"><b>Articles </b></h2>
+        <br />
+        <a class="btn btn-danger" href="/admin/articles/new">Create a new article</a>
+        <hr />
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>title </td>
+                    <td>category</td>
+                    <td>actions</td>
+                </tr>
+            </thead>
+            <tbody>
+                    <% articles.forEach(article =>{ %>
+                <tr>
+                    <td><%=article.title%></td>
+                    <td><%=article.category.title%></td>
+                    <td>
+                        <a href="/admin/articles/edit/<%=article.id%>" class="btn btn-warning"> Edit</a>
+                        <form method="post" style="display:inline;" action="/article/delete" onsubmit="aviso(event,this)">
+                            <input type="hidden" name="id" value="<%= article.id %>" />
+                            <button class="btn btn-dark bg-dark">Delet</button>
+                        </form>
+                    </td>
+                </tr>
+                    <%})%>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+<script>
+    function aviso(event, form) {
+        event.preventDefault();
+        var decision = confirm("Do you really want to delete?");
+        if (decision) {
+            form.submit();
+        }
+    }
+</script>
+
+<%- include ('../../partials/footer.ejs'); %>
