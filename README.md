@@ -6,3 +6,4 @@ Como rodar?
 -Baixar e configurar o node js. Com o node js configurado dar o comando npp install para instalar todas as bibiliotecas.
 -Baixar e configurar o mysql. Com mysql totalmente configurado criar o banco de dados "blog_database", e mudar o login e senha do root no arquivo database.js na pasta database dentro do projeto.
 -Fazendo isso so dar um npx nodemon index.js e acessar http://localhost:8080
+-Para a criação do primeiro usuario basta entrar na rota http://localhost:8080/admin/users/create apenas quem estiver logado cobseguirá criar, editar e excluir artigos e categorias.
