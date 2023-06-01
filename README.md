@@ -1,4 +1,4 @@
-Olá! Esse projeto foi feito com intuito de botar em pratica oque aprendi em um curso. O pprojeto foi feito em node js utilizando express,sequelize,body-parser,ejs 
+Olá! Esse projeto foi feito com intuito de botar em pratica oque aprendi em um curso. O projeto foi feito em node js utilizando express,sequelize,body-parser,ejs 
 entre outros como midware para validação de sessão para usuario adm.
 
 Como rodar?
