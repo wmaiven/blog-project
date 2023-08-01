@@ -5,5 +5,6 @@ const connection = new Sequelize('blog_database', 'root', '123456', {
     timezone: "-03:00"
 
 })
-connection.sync({force: true})
+
+//connection.sync({force: true})
 module.exports = connection;

@@ -17,19 +17,33 @@
                 </tr>
             </thead>
             <tbody>
-                    <% articles.forEach(article =>{ %>
-                <tr>
-                    <td><%=article.title%></td>
-                    <td><%=article.category.title%></td>
-                    <td>
-                        <a href="/admin/articles/edit/<%=article.id%>" class="btn btn-warning"> Edit</a>
-                        <form method="post" style="display:inline;" action="/article/delete" onsubmit="aviso(event,this)">
-                            <input type="hidden" name="id" value="<%= article.id %>" />
-                            <button class="btn btn-dark bg-dark">Delet</button>
-                        </form>
-                    </td>
-                </tr>
-                    <%})%>
+                <% articles.forEach(article =>{ %>
+                    <% if (!article.category){ %>
+                        <tr>
+                            <td><%=article.title%></td>
+                            <td>None</td>
+                            <td>
+                                <a href="/admin/articles/edit/<%=article.id%>" class="btn btn-warning"> Edit</a>
+                                <form method="post" style="display:inline;" action="/article/delete" onsubmit="aviso(event,this)">
+                                    <input type="hidden" name="id" value="<%= article.id %>" />
+                                    <button class="btn btn-dark bg-dark">Delet</button>
+                                </form>
+                            </td>
+                        </tr> 
+                     <% }else { %>   
+                        <tr>
+                            <td><%=article.title%></td>
+                            <td><%=article.category.title%></td>
+                            <td>
+                                <a href="/admin/articles/edit/<%=article.id%>" class="btn btn-warning"> Edit</a>
+                                <form method="post" style="display:inline;" action="/article/delete" onsubmit="aviso(event,this)">
+                                    <input type="hidden" name="id" value="<%= article.id %>" />
+                                    <button class="btn btn-dark bg-dark">Delet</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% } %>
+                <% }) %>
             </tbody>
         </table>
     </div>
